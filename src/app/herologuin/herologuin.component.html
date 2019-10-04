@@ -1,0 +1,59 @@
+<h1>"ol k tal"</h1>
+<div class="container">
+    <div class="row">
+        <div class="col s5">
+                <h5>Pon tus datos para iniciar sesión</h5>
+            <div class="card">
+                <div class="card-content">
+                    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="name" #name="ngModel" [(ngModel)]="usuarioService.selectedUsuario.name" placeholder="Tu nombre siusplau">
+                            </div>
+                            <div class="input-field col s12">
+                                    <input type="text" name="pass" #pass="ngModel" [(ngModel)]="usuarioService.selectedUsuario.pass" placeholder="Tu pass siusplau">
+                             </div>
+                             <div class="card-action">
+                                 <div class="input-filed col s12">
+                                     <button class="btn ">Login</button>
+                                 </div> 
+
+                             </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col s7">
+                <h5>Si no estás registrado, rellene lo de abajo gracias</h5>
+                <div class="card">
+                    <div class="card-content">
+                        <form #addForm="ngForm" (ngSubmit)="addUsuario(addForm)">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="id" #id="ngModel" [(ngModel)]="usuarioService.nuevoUsuario.id" placeholder="Tu id siusplau">
+                                </div>
+                                <div class="input-field col s12">
+                                        <input type="text" name="name" #name="ngModel" [(ngModel)]="usuarioService.nuevoUsuario.name" placeholder="Tu name siusplau">
+                                 </div>
+                                 <div class="input-field col s12">
+                                        <input type="text" name="pass" #pass="ngModel" [(ngModel)]="usuarioService.nuevoUsuario.pass" placeholder="Tu pass siusplau">
+                                 </div>
+                    
+                                 <div class="card-action">
+                                     <div class="input-filed col s12">
+                                         <button class="btn ">Registrarse</button>
+                                     </div> 
+    
+                                 </div>
+                            </div>
+                        </form>
+    
+                    </div>
+                </div>
+    
+        </div>
+    </div>
+</div>

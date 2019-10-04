@@ -1,0 +1,54 @@
+<p>Hola super usuario : {{id}}</p>
+
+<div class="container">
+    <div class="row">
+      <div class="col s5">
+        <div class="card">
+          <div class="card-content">
+            <form #usuariologin="ngForm" (ngSubmit)="editUser(usuariologin)">
+              
+              <div class="row">
+                <div class="input-field col-s12">
+                  <input type="text" name="id" #id="ngModel" [(ngModel)]="usuariologin.id" placeholder="el id no se cambia jajatonto!">
+                </div>
+                <div class="input-field col-s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="usuariologin.name" placeholder="Cambia tu nombre!">
+                </div>
+                <div class="input-field col-s12">
+                  <input type="text" name="info" #info="ngModel" [(ngModel)]="usuariologin.info"  placeholder="Aún no tienes información">
+                </div>
+                <div class="card-action">
+                  <div class="input-field col-s12">
+                    <button class="btn left">CAMBIA TU PERFIL PARA EL MUNDO</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col s7">
+        <table class="striped highlight black-text">
+          <thead>
+            <th>Name</th>
+            <th>info</th>           
+            <th>VERLO DE MAS DE SERCA</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of listaUsuarios">
+              <td>{{ usuario.name }}</td>
+              <td>{{ usuario.info }}</td>
+              <td>
+                <a>
+                  <i class="material-icons">edit</i>
+                </a>
+                <a>
+                  <i class="material-icons">where_to_vote</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
